@@ -1,0 +1,11 @@
+--- drivers/mmc/host/sdhci-msm.c
++++ drivers/mmc/host/sdhci-msm.c
+@@ -837,7 +837,7 @@ static void sdhci_msm_set_cdr(struct sdhci_host *host, bool enable)
+ static int sdhci_msm_execute_tuning(struct mmc_host *mmc, u32 opcode)
+ {
+ 	struct sdhci_host *host = mmc_priv(mmc);
+-	int tuning_seq_cnt = 3;
++	int tuning_seq_cnt = 10;
+ 	u8 phase, tuned_phases[16], tuned_phase_cnt = 0;
+ 	int rc;
+ 	struct mmc_ios ios = host->mmc->ios;
